@@ -19,4 +19,34 @@ class Image {
     
     p.updatePixels();
   }
+  
+  void flip(FlipAxis flipAxis) {
+    p.loadPixels();
+    if (flipAxis == FlipAxis.HORIZONTAL) {
+      for (int row = 0; row < p.height; row++) {
+        for (int column = 0; column < p.width / 2; column++) {
+          color pixelColor = p.pixels[row * p.width + (p.width -1 - column)];
+          p.pixels[row * p.width + (p.width -1 - column)] = p.pixels[row * p.width + column];
+          p.pixels[row * p.width + column] = pixelColor;
+        }
+      }
+    }
+    
+    if (flipAxis == FlipAxis.VERTICAL) {
+    }
+      
+    p.updatePixels();
+  }
+}
+
+enum FlipAxis {
+  VERTICAL,
+  HORIZONTAL
+}
+
+void printColor(color pixelColor) {
+  println("Color ");
+  println(red(pixelColor));
+  println(green(pixelColor));
+  println(blue(pixelColor));
 }
