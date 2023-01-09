@@ -5,7 +5,8 @@ void setup() {
   noSmooth();
   
   i = new Image("Thigh1.jpg");
-  i.flip(FlipAxis.HORIZONTAL);
+  i.flip(FlipAxis.VERTICAL);
+  i.grayScale();
   
   image(i.p, 0, 0, width, height);
 }

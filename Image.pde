@@ -32,7 +32,14 @@ class Image {
       }
     }
     
-    if (flipAxis == FlipAxis.VERTICAL) {
+    else if (flipAxis == FlipAxis.VERTICAL) {
+      for (int row = 0; row < p.height / 2; row++) {
+        for (int column = 0; column < p.width; column++) {
+          color pixelColor = p.pixels[(p.height - 1 - row) * p.width + column];
+          p.pixels[(p.height - 1  - row) * p.width + column] = p.pixels[row * p.width + column];
+          p.pixels[row * p.width + column] = pixelColor;
+        }
+      }
     }
       
     p.updatePixels();
