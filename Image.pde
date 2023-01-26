@@ -1,10 +1,6 @@
 class Image {
   PImage p;
   
-  Image(String fileName) {
-    p = loadImage(fileName);
-  }
-  
   void grayScale() {
     p.loadPixels();
     
@@ -43,6 +39,9 @@ class Image {
     }
       
     p.updatePixels();
+  }
+  
+  void blur() {
   }
 }
 
