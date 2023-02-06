@@ -2,7 +2,8 @@ Image i;
 UI ui;
 
 void setup() {
-  size(800, 800);
+  //size(800, 800);
+  fullScreen();
   noSmooth();
   ui = new UI();
   i = new Image();
